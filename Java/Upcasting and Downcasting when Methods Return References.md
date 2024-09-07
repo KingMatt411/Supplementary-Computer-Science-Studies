@@ -62,14 +62,3 @@ HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 ```
 
 Therefore, the reference returned by `url.openConnection()` is cast as a reference to an `HttpURLConnection` object so that it can be assigned to the `connection` (pointer) variable.
-
-
-
-
-
-
-
-
-
-
-

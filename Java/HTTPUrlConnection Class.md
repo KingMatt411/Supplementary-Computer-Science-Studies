@@ -76,9 +76,9 @@ public class Main {
 
 In summary, `openConnection()` prepares the connection object for the URL's protocol but doesn't open the network connection immediately.
 
+##### Why Does the Reference Returned by `openConnection()` Need to be Cast as an `HttpURLObject`?
 
-
-
+Remember that **methods return references (i.e., pointers)** to objects, not actual objects. The data type returned by `openConnection()` is essentially "pointer to a `URLConnection` object", (or, if this was C++, a `URLConnection*` - bearing in mind that C++ uses its own libraries and classes for this purpose which are different to those used in Java). Due to upcasting, a `URLConnection` reference can point to an object of any of its subclasses (such as `HttpURLConnection`, `FileURLConnection`, `JarURLConnection`). . In this case, it points to an `HttpURLConnection` instance. However, since the return type of the `openConnection()` method is a reference to `URLConnection`, this reference needs to be cast as an `HttpURLCompiler` to ensure access to methods specific to `HttpURLConnection`.
 
 
 
