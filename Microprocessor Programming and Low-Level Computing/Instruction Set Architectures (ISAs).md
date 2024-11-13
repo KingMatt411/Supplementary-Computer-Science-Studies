@@ -56,8 +56,6 @@ ___
 
 The ISA specifies the number of unique memory locations the CPU can address, which is effectively the size of the **address space**. For example, a 32-bit ISA can theoretically address up to $2^{32}$ memory locations, or 4 GB of memory, while a 64-bit ISA can address up to $2^{64}$ locations. Since this addressing is **logical**, the same physical RAM can be used across different CPU architectures, as logical addresses are mapped to physical addresses by the CPU's memory management unit (MMU), making the physical memory architecture-agnostic.
 
-
-
 #### Memory Words
 
 A **memory word** is a fixed-size unit of data that a computer processor can read from or write to memory in a single operation. The size of a memory word depends on the architecture of the computer, and directly impacts how data is organised, stored, and accessed in memory.
@@ -95,25 +93,10 @@ A CPU processes an entire word at once, even if the data being processed is smal
 
 While padding with zeros for a single bit like `1` may seem inefficient, the trade-off enables **massive speed and efficiency gains** across most typical operations. The benefit of aligning data with the CPU's word size greatly outweighs the minor inefficiency of padding for smaller data values.
 
+___
 
+#### Assemblers
 
+Assemblers translate assembly language directly into machine code.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Since assembly is essentially a human-readable form of machine instructions and has a nearly one-to-one correspondence with machine instructions, an assembler's job is mainly to "assemble" these instructions into machine-readable binary code without significant processing or optimisation. This differs from a compiler's job of handling the more complex task of translating and optimising high-level abstractions into machine code.
