@@ -19,12 +19,16 @@
     > Flipping the bits in 2's complement creates the binary "one's complement", and adding 1 ensures the correct negative equivalent by making the sum of a positive number and its 2's complement equal zero in binary arithmetic. This enables the CPU to seamlessly perform addition and subtraction.
     >
     > * If you actually try this, you will notice that it doesn't technically equal zero, however the carried 1 is discarded due to falling outside the number of bits (thus making the result zero).
-    >   $$
-    >   & & 0 & 1 & 1 & 1 \\
-    >   + & & 1 & 0 & 0 & 1 \\
-    >   \hline
-    >     & 1 & 0 & 0 & 0 & 0 \\
-    >   $$
+
+$$
+\begin{matrix}
+    & 0 & 1 & 1 & 1 \\
+    + & 1 & 0 & 0 & 1 \\
+    \hline
+    1 & 0 & 0 & 0 & 0
+\end{matrix}
+$$
+
 
 For representing negative signed integers, 2's complement is considered the industry standard and is used in almost all modern processors.
 
