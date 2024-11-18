@@ -62,37 +62,48 @@ The following tables of opcodes demonstrates how different opcodes instruct the 
 
 *Floating-point numbers are inherently signed, there are no unsigned floating-point numbers in the IEEE 754 standard*.
 
-| Opcode   | Description |
-| -------- | ----------- |
-| `FADD`   |             |
-| `FSUB`   |             |
-| `FMUL`   |             |
-| `FDIV`   |             |
-| `FCMP`   |             |
-| `FSQRT`  |             |
-| `FABS`   |             |
-| `FNEG`   |             |
-| `FROUND` |             |
+| Opcode   | Description                                             |
+| -------- | ------------------------------------------------------- |
+| `FADD`   | Adds two floating-point numbers.                        |
+| `FSUB`   | Subtracts two floating-point numbers.                   |
+| `FMUL`   | Multiplies two floating-point numbers.                  |
+| `FDIV`   | Divides two floating-point numbers.                     |
+| `FCMP`   | Compares two floating-point numbers.                    |
+| `FSQRT`  | Computes the square root of a floating-point number.    |
+| `FABS`   | Computes the absolute value of a floating-point number. |
+| `FNEG`   | Negates a floating-point number.                        |
+| `FROUND` | Rounds a floating-point number to the nearest integer.  |
 
 ##### Data Conversion Operations
 
-| Opcode | Description |
-| ------ | ----------- |
-|        |             |
+| Opcode | Description                                                  |
+| ------ | ------------------------------------------------------------ |
+| `ITOF` | Converts an integer to a floating-point number.              |
+| `FTOI` | Converts a floating-point number to an integer.              |
+| `ITOD` | Converts an integer to a double-precision floating-point number. |
+| `DTOI` | Converts a double-precision floating-point number to an integer. |
+| `SEXT` | Converts a signed number to a larger bit size.               |
+| `ZEXT` | Converts an unsigned number to a larger bit size.            |
 
+___
 
+### Floating-Point Numbers
 
+##### IEEE 32-bit Floating Point Format
 
+1. **Sign Bit** (1 bit):
 
+   * Indicates whether the number is positive or negative.
+     * `0` → Positive
+     * `1` → Negative
 
+2. **Exponent Bits** (8 bits):
 
+   * Specifies the power (of 2) to which to scale the number (this is also known as the **range**).
 
+     > The exponent is stored in a format called excess (or biased) notation. The bias for a 32-bit float is `127`. This means that 127 must be added to the actual exponent when storing it in the binary representation of the floating-point number. For example, an exponent of $3$ would be stored as $130$ (`10000010`), since $3 + 127 = 130$, and an exponent of $-3$ would be stored as $124$ (`01111100`), since $-3 + 127 = 124$.
 
+3. **Fraction Bits** (23 bits):
 
-
-
-
-
-
-
-
+   * These are the actual significant bits that determine the magnitude of the number.
+   * The value is in the form $1.fraction\ bits$. The leading `1` is implicit, meaning that `00000000000000000000000` represents a value of $1.0$. A value of `00101000000000000000000` represents an actual value of $1.00101$.
