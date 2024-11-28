@@ -61,6 +61,25 @@ static int Main() { return 0; } // Can return an int to indicate exit codes
 static int Main(string[] args) { return 0; }
 ```
 
+### Implicit Access Modifiers
+
+Both the `Program` class and `Main` method have implicit (default) access modifiers.
+
+#### `class Program`
+
+* **Implicit Modifier**: `internal`
+
+* **Explanation**: Since `Program` is a top-level class (not nested within another class), and no access modifier is specified, it defaults to `internal`. This means the class is **accessible only within its own assembly**.
+
+  An **assembly** refers to a **compiled code library** used for deployment, testing, versioning, and security in .NET applications. It can be **either an executable or a dynamic library**.
+
+* **Implications**: `internal` classes are accessible from any code within the same shared library (for libraries) or executable (for executables), but not from other libraries/executables. Since executables are not referenced by other assemblies, this limitation is only relevant for shared libraries.
+
+#### `static int Main(string[] args)`
+
+* **Implicit Modifier**: `private`
+* **Explanation**: The `Main` method is a member of the `Program` class. In C#, class members (methods, fields, properties, etc.) default to `private` when no access modifier is specified. Therefore, `Main` is `private` by default. Despite being `private`, the C# compiler recognises it as the entry point of the application.
+
 
 
 #### Java Equivalent
