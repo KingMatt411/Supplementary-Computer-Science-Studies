@@ -67,7 +67,7 @@ int BinarySearch(int[] arr, int target) {
 
 ___
 
-### $O(n)$ - Linear Time
+#### $O(n)$ - Linear Time
 
 **What It Means**:
 
@@ -94,7 +94,7 @@ void PrintElements(int[] arr) {
 
 ___
 
-### $O(n \log n)$ - Quasilinear Time
+#### $O(n \log n)$ - Quasilinear Time
 
 **What It Means**:
 
@@ -121,7 +121,7 @@ void MergeSort(int[] arr) {
 
 ___
 
-### $O(n^2)$ - Quadratic Time
+#### $O(n^2)$ - Quadratic Time
 
 **What It Means**:
 
@@ -151,7 +151,7 @@ void PrintPairs(int[] arr) {
 
 ___
 
-### $O(2^n)$ - Exponential Time
+#### $O(2^n)$ - Exponential Time
 
 **What It Means**:
 
@@ -178,7 +178,7 @@ void SolveTSP(int[] cities) {
 
 ___
 
-### $O(n!)$ - Factorial Time
+#### $O(n!)$ - Factorial Time
 
 **What It Means**:
 
@@ -204,7 +204,7 @@ void GeneratePermutations(int[] arr) {
 
 ___
 
-### Summary Table
+#### Summary Table
 
 | Big O         | Description      | Efficiency     | Real-World Analogy                                |
 | ------------- | ---------------- | -------------- | ------------------------------------------------- |
@@ -215,3 +215,51 @@ ___
 | $O(n^2)$      | Quadratic time   | Poor           | Comparing every student with every other student. |
 | $O(2^n)$      | Exponential time | Very poor      | Trying all combinations of keys on a piano.       |
 | $O(n!)$       | Factorial time   | Extremely poor | Listing all seating arrangements for 10 people.   |
+
+___
+
+### Examples
+
+#### Analysing the Time Complexity of a Simple Loop
+
+```csharp
+for (int i = 0; i < n; i++) {
+    Console.WriteLine(i);
+}
+```
+
+* The loop runs from `0` to `n - 1`, so it executes **n times**.
+* The complexity is $O(n)$ (linear time complexity).
+
+#### Nested Loops
+
+```csharp
+for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
+        Console.WriteLine(i + j);
+    }
+}
+```
+
+* The outer loop runs **n** times.
+* For each iteration of the outer loop, the inner loop runs **n** times.
+* Total iterations: **n * n = n²**.
+* The complexity is $O(n^2)$.
+
+#### Recursion Example
+
+```csharp
+int Factorial(int n) {
+    if (n == 0) return 1;
+    return n * Factorial(n - 1);
+}
+```
+
+* For `Factorial(5)`, the function calls itself 5 times.
+* Each call does constant work.
+* Total complexity: $O(n)$ (linear time complexity).
+
+*Note that this recursion factorial function differs from factorial complexity, where the time complexity is equal to the factorial of the input. Factorial time complexity appears in problems that involve generating permutations or trying all combinations, not in the calculations of $n!$* itself.*
+
+
+
