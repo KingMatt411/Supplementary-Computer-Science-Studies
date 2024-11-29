@@ -27,7 +27,7 @@ ___
 ### Data Structures Roadmap
 
 1. [**Arrays**](./Arrays.md): Foundation of most data structures.
-2. [**Linked Lists**](Linked Lists.md): Dynamic memory-based structure.
+2. [**Linked Lists**](Linked%20Lists.md): Dynamic memory-based structure.
 3. **Stacks and Queues**: Useful for managing sequential data.
 4. **Trees**: Hierarchical data representation.
 5. **Graphs**: Relationships between entities.
