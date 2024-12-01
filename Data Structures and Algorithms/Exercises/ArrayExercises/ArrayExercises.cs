@@ -20,13 +20,23 @@ class Exercises {
         Console.WriteLine();
     }
 
-    public static void TestInsertAtIndex(int[] arr, int value, int index) {
-
+    private static void TestInsertAtIndex(int[] arr, int value, int index) {
+        
         Console.Write($"Insert value {value} to array ");
         foreach (int i in arr) { Console.Write(i + " "); }
         Console.WriteLine();
+
+        int[] updatedArray;
         
-        int[] updatedArray = InsertAtIndex(arr, value, index);
+        try
+        {
+            updatedArray = InsertAtIndex(arr, value, index);
+        }
+        catch (IndexOutOfRangeException e)
+        {
+            Console.WriteLine(e.Message);
+            throw;
+        }
 
         Console.Write("Result: ");
         
@@ -36,9 +46,24 @@ class Exercises {
         Console.WriteLine();
     }
 
-    public static int[] InsertAtIndex(int[] arr, int value, int index) {
+    private static int[] InsertAtIndex(int[] arr, int value, int index) {
 
-        int[] newArr = new int[arr.Length + 1];
+        if (index < 0 || index > arr.Length)
+        {
+            throw new IndexOutOfRangeException("Index is out of range");
+        }
+
+        int[] newArr;
+
+        try
+        {
+            newArr = new int[arr.Length + 1];
+        }
+        catch (IndexOutOfRangeException e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
 
         Array.Copy(arr, 0, newArr, 0, index);
         newArr[index] = value;
@@ -49,7 +74,7 @@ class Exercises {
         return newArr;
     }
 
-    public static void TestDeleteAtIndex(int[] arr, int index) {
+    private static void TestDeleteAtIndex(int[] arr, int index) {
         Console.Write($"Delete index \"{index}\" from array: ");
         foreach(int i in arr) { Console.Write(i + " "); }
         Console.WriteLine();
@@ -61,8 +86,13 @@ class Exercises {
         Console.WriteLine();
     }
 
-    public static int[] DeleteAtIndex(int[] arr, int index) {
+    private static int[] DeleteAtIndex(int[] arr, int index) {
 
+        if (index < 0 || index > arr.Length - 1)
+        {
+            throw new IndexOutOfRangeException("Index is out of range");
+        }
+        
         int[] newArr = new int[arr.Length - 1];
 
         Array.Copy(arr, 0, newArr, 0, index);
@@ -72,18 +102,3 @@ class Exercises {
         return newArr;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
