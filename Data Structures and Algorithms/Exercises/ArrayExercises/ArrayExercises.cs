@@ -1,8 +1,6 @@
-using System;
+namespace Exercises.ArrayExercises;
 
-namespace ArrayExercises;
-
-class Exercises {
+internal static class Exercises {
 
     public static void RunExercises() {
 
@@ -26,18 +24,8 @@ class Exercises {
         foreach (int i in arr) { Console.Write(i + " "); }
         Console.WriteLine();
 
-        int[] updatedArray;
+        int[] updatedArray = InsertAtIndex(arr, value, index);
         
-        try
-        {
-            updatedArray = InsertAtIndex(arr, value, index);
-        }
-        catch (IndexOutOfRangeException e)
-        {
-            Console.WriteLine(e.Message);
-            throw;
-        }
-
         Console.Write("Result: ");
         
         for(int i = 0; i < updatedArray.Length; i++) {
@@ -53,17 +41,7 @@ class Exercises {
             throw new IndexOutOfRangeException("Index is out of range");
         }
 
-        int[] newArr;
-
-        try
-        {
-            newArr = new int[arr.Length + 1];
-        }
-        catch (IndexOutOfRangeException e)
-        {
-            Console.WriteLine(e);
-            throw;
-        }
+        int[] newArr = new int[arr.Length + 1];
 
         Array.Copy(arr, 0, newArr, 0, index);
         newArr[index] = value;
