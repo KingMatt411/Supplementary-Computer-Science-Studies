@@ -108,9 +108,23 @@ class Stack {
 }
 ```
 
+#### Internal Implementation of C# `Stack<T>`
 
+**The `Stack<T>` class uses a dynamically sized array to store its elements internally.**
 
+* The time complexity for `Push` and `Pop` operations is $O(1)$ on average. However, resizing the array during a `Push` operation takes $O(n)$ time, where `n` is the number of elements in the stack, because of the copying step. This happens infrequently, so the amortised cost remains $O(1)$.
+* Access to the top element (`Peek`) is $O(1)$.
+* The internal array is private and managed by methods like `Push`, `Pop`, `Peek`, and `EnsureCapacity` (for resizing).
 
+##### Why Have a `Stack<T>` Class at All?
+
+Since the `Stack<T>` class simply uses an array internally, you may wonder why the class is needed at all rather than interacting directly with the arra. There are several reasons for this:
+
+* **Expressing Intent**: A `Stack<T>` represents a Last-In-First-Out (LIFO) collection. This makes your intent clear when you use it in code.
+* **Behavioural Guarantees**: A stack provides specific guarantees.
+  * **Controlled Access**: Only the top element can be inspected or removed (`Peek` and `Pop`), reinforcing the LIFO principle.
+  * **No Arbitrary Access**: Unlike a `List<T>`, you cannot index into a `Stack<T>` or modify elements arbitrarily, ensuring a consistent usage pattern.
+* **Abstraction and Encapsulation**: The `Stack<T>` class abstracts away the details of how the data is stored (internally it's a dynamic array) and provides a focused API that matches the stack's conceptual model.
 
 
 
