@@ -37,10 +37,8 @@ ___
 
   - Linked Lists
 
-    :
-
     - Singly Linked List: Creation, traversal, insertion, deletion.
-    - Doubly Linked List (optional).
+- Doubly Linked List (optional).
 
 **Practice**:
 
