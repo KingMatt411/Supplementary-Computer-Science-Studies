@@ -99,6 +99,8 @@ class Queue {
     }
     int value = elements[front];
     front = (front + 1) % maxSize; // Move front forward
+    count--;
+    return value;
   }
   
   // Peek: Return the front element without removing it

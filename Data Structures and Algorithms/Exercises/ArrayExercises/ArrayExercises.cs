@@ -1,4 +1,5 @@
 namespace Exercises.ArrayExercises;
+using System;
 
 internal static class Exercises {
 

@@ -1,6 +1,7 @@
 ﻿using System;
 
 namespace Exercises;
+using QueueExercises;
 
 class Program
 {
