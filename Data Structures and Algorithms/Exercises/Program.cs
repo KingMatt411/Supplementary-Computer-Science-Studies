@@ -7,6 +7,6 @@ class Program
 {
     static void Main(string[] args)
     {
-        BubbleSort.BubbleSort.RunTests();
+        SelectionSort.SelectionSort.RunTests();
     }
 }
