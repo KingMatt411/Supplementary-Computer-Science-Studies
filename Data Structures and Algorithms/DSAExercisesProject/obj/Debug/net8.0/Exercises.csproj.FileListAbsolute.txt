@@ -1,5 +1,0 @@
-/home/mattpatchava/Studies/Supplementary-Computer-Science-Studies/Data Structures and Algorithms/Exercises/obj/Debug/net8.0/Exercises.GeneratedMSBuildEditorConfig.editorconfig
-/home/mattpatchava/Studies/Supplementary-Computer-Science-Studies/Data Structures and Algorithms/Exercises/obj/Debug/net8.0/Exercises.AssemblyInfoInputs.cache
-/home/mattpatchava/Studies/Supplementary-Computer-Science-Studies/Data Structures and Algorithms/Exercises/obj/Debug/net8.0/Exercises.AssemblyInfo.cs
-/home/mattpatchava/Studies/Supplementary-Computer-Science-Studies/Data Structures and Algorithms/Exercises/obj/Debug/net8.0/Exercises.csproj.CoreCompileInputs.cache
-/home/mattpatchava/Studies/Supplementary-Computer-Science-Studies/Data Structures and Algorithms/Exercises/obj/Debug/net8.0/Exercises.sourcelink.json
