@@ -1,14 +1,11 @@
-﻿using System;
-using DSAExercisesProject.Sorting.InsertionSort;
-using DSAExercisesProject.Sorting.MergeSort;
+﻿using DSAExercisesProject.Sorting.MergeSort;
+using DSAExercisesProject.Sorting.QuickSort;
 
 namespace DSAExercisesProject;
-using QueueExercises;
-
 class Program
 {
     static void Main(string[] args)
     {
-        MergeSort.RunTests();
+        QuickSortTwo.RunTests();
     }
 }
