@@ -44,7 +44,7 @@ public class TreeNode
 
 #### Example Tree
 
-```markdown
+```
         1
        / \
       2   3
