@@ -38,7 +38,7 @@ public class TreeNode
         Data = data;
         Left = null;
         Right = null;
-    }
+    }	
 }
 ```
 
@@ -157,20 +157,62 @@ namespace DSAExercisesProject.Trees
             PostOrderTraversal(node.Right);
             Console.Write(node.Data + " ");
         }
+        
+        public void LevelOrderTraversal(TreeNode? node)
+        {
+           if (root == null) return;
+            
+            Queue<TreeNode> queue = new Queue<TreeNode>();
+            queue.Enqueue(root);
+            
+            while (queue.Count > 0)
+            {
+                TreeNode current = queue.Dequeue();
+                Console.Write(current.Data + " ");
+                
+                if (current.Left != null) queue.Enqueue(current.Left);
+                if (current.Right != null) queue.Enqueue(current.Right);
+            }
+        }
     }
-    
-    
-    
 }
 ```
 
+___
 
+### Testing the Tree and Traversals
 
+```csharp
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        BinaryTree tree = new BinaryTree();
+        
+        tree.Root = new TreeNode(1);
+        tree.Root.Left = new TreeNode(2);
+        tree.Root.Right = new TreeNode(3);
+        tree.Root.Left.Left = new TreeNode(4);
+        tree.Root.Left.Right = new TreeNode(5);
+        
+        Console.WriteLine("In-Order Traversal:");
+        tree.InOrderTraversal(tree.Root);
+        Console.WriteLine();
+        
+        Console.WriteLine("Pre-Order Traversal:");
+        tree.PreOrderTraversal(tree.Root);
+        Console.WriteLine();
+        
+        Console.WriteLine("Post-Order Traversal");
+        tree.PostOrderTraversal(tree.Root);
+        Console.WriteLine();
+        
+        Console.WriteLine("Level-Order Traversal");
+        tree.LevelOrderTraversal(tree.Root);
+        Console.WriteLine();
+    }
+}
+```
 
-
-
-
-
-
-
+___
 

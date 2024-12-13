@@ -1,6 +1,4 @@
-namespace DSAExercisesProject.QueueExercises;
-using System;
-using System.Collections.Generic;
+namespace DSAExercisesProject.DataStructures.Linear.QueueExercises;
 
 class BinaryExercise {
 

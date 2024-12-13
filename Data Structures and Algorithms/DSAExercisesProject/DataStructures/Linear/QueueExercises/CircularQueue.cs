@@ -1,5 +1,5 @@
-namespace DSAExercisesProject.QueueExercises;
-using System;
+namespace DSAExercisesProject.DataStructures.Linear.QueueExercises;
+
 /// <summary>
 /// A circular queue where the 
 /// </summary>

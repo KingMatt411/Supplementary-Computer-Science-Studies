@@ -1,5 +1,4 @@
-namespace DSAExercisesProject.ArrayExercises;
-using System;
+namespace DSAExercisesProject.DataStructures.Linear.ArrayExercises;
 
 internal static class Exercises {
 

@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-namespace DSAExercisesProject.LinkedListExercises
+namespace DSAExercisesProject.DataStructures.Linear.LinkedListExercises
 {
 
     class Exercises {

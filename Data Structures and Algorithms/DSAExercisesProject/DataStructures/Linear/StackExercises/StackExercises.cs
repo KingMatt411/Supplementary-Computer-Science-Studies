@@ -1,4 +1,4 @@
-namespace DSAExercisesProject.StackExercises;
+namespace DSAExercisesProject.DataStructures.Linear.StackExercises;
 
 public static class Exercises
 {
